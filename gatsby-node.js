@@ -1,7 +1,7 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-const PostTemplate = path.resolve('./src/templates/post-template.js')
+const PostTemplate = path.resolve('./src/templates/post-template.tsx')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions

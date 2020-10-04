@@ -9,20 +9,38 @@ const getMarkdownPosts = graphql`
             totalCount
             edges {
                 node {
-                    frontmatter {
-                        date
-                        title
-                    }
-                    excerpt
                     id
+                    excerpt
+                    frontmatter {
+                        title
+                        date
+                    }
                 }
             }
         }
     }
 `
 
+interface postProps {
+    allMarkdownRemark: {
+        totalCount: number
+        edges: [
+            {
+                node: {
+                    id: string
+                    excerpt: string
+                    frontmatter: {
+                        title: string
+                        date: Date
+                    }
+                }
+            }
+        ]
+    }
+}
+
 export default () => {
-    const data = useStaticQuery(getMarkdownPosts)
+    const data: postProps = useStaticQuery(getMarkdownPosts)
 
     return (
         <Layout>

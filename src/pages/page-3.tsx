@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 
 const getImageData = graphql`
     {
-        allFile {
+        allFile(filter: { sourceInstanceName: { eq: "images" } }) {
             edges {
                 node {
                     relativePath
@@ -18,8 +18,23 @@ const getImageData = graphql`
     }
 `
 
+interface imageProps {
+    allFile: {
+        edges: [
+            {
+                node: {
+                    relativePath: string
+                    size: number
+                    birthTime: Date
+                    extension: string
+                }
+            }
+        ]
+    }
+}
+
 export default () => {
-    const data = useStaticQuery(getImageData)
+    const data: imageProps = useStaticQuery(getImageData)
 
     return (
         <Layout>
@@ -35,7 +50,7 @@ export default () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.allFile.edges.map(({ node }, index) => (
+                    {data.allFile.edges.map(({ node }, index: number) => (
                         <tr key={index}>
                             <td>{node.relativePath}</td>
                             <td>{node.size}</td>
