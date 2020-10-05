@@ -102,7 +102,11 @@ export default ({
 
 export const query = graphql`
     query($skip: Int!, $limit: Int!) {
-        allMarkdownRemark(skip: $skip, limit: $limit) {
+        allMarkdownRemark(
+            skip: $skip
+            limit: $limit
+            sort: { fields: [frontmatter___date], order: DESC }
+        ) {
             totalCount
             edges {
                 node {
@@ -110,7 +114,7 @@ export const query = graphql`
                     excerpt
                     frontmatter {
                         title
-                        date
+                        date(formatString: "dddd, MMMM Do YYYY")
                     }
                     fields {
                         slug
