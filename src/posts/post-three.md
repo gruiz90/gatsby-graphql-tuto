@@ -1,5 +1,5 @@
 ---
-title: 'Third Gatsby Garb Post'
+title: 'Third Markdown Post'
 date: '2020-10-11'
 ---
 

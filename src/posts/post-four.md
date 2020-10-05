@@ -1,5 +1,5 @@
 ---
-title: 'The Fourth Gatsby Garb Post'
+title: 'The Fourth Post'
 date: '2020-10-20'
 ---
 
