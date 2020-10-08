@@ -23,13 +23,13 @@ const NavLink = (
 //     siteTitle: string
 // }
 
-class Header extends React.Component {
+class Header extends React.Component<{ siteTitle: string }> {
     componentDidMount() {
         netlifyIdentity.init()
     }
 
     render() {
-        const { siteTitle }: any = this.props
+        const { siteTitle } = this.props
         return (
             <header
                 style={{
@@ -43,7 +43,7 @@ class Header extends React.Component {
                         alignItems: 'center',
                         justifyContent: 'space-between',
                         margin: `0 auto`,
-                        maxWidth: 960,
+                        maxWidth: 1920,
                         padding: `1.45rem 1.0875rem`,
                     }}
                 >
