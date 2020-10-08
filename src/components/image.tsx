@@ -41,10 +41,10 @@ const Image = () => {
     }
 
     return (
-        <>
+        <div style={{ alignContent: 'center', alignItems: 'center' }}>
             <Img fluid={data.placeholderImage.childImageSharp.fluid} />
             <Img fluid={data.iconImage.childImageSharp.fluid} />
-        </>
+        </div>
     )
 }
 
