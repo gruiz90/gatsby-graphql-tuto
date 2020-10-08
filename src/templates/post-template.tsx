@@ -3,7 +3,7 @@ import { graphql, PageProps } from 'gatsby'
 
 import Layout from '../components/layout'
 
-type DataProps = {
+interface DataProps {
     markdownRemark: {
         html: string
         timeToRead: number
