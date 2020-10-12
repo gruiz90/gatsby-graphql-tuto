@@ -55,9 +55,9 @@ class Products extends React.Component<DataPageProps, MyState> {
             <Layout>
                 <div>
                     {/* Products List */}
+                    <h2>My Products</h2>
                     {products.map(({ node: product }) => (
                         <div key={product.id}>
-                            <h2>Garb Products</h2>
                             <Link
                                 to={`/products/${product.slug}`}
                                 style={{

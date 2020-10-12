@@ -19,10 +19,6 @@ const NavLink = (
         Readonly<{ children?: React.ReactNode }>
 ) => <Link getProps={isActive} {...props} />
 
-// interface Props {
-//     siteTitle: string
-// }
-
 class Header extends React.Component<{ siteTitle: string }> {
     componentDidMount() {
         netlifyIdentity.init()
